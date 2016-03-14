@@ -16,6 +16,10 @@
 		4B979AD81C6A2A4B00607AC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B979AD61C6A2A4B00607AC9 /* LaunchScreen.storyboard */; };
 		4B979AE31C6A2A4B00607AC9 /* mySpriteKitTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B979AE21C6A2A4B00607AC9 /* mySpriteKitTestTests.swift */; };
 		4B979AEE1C6A2A4C00607AC9 /* mySpriteKitTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B979AED1C6A2A4C00607AC9 /* mySpriteKitTestUITests.swift */; };
+		5A3182C11C96FD3C004B0FA0 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A3182BF1C96FD3B004B0FA0 /* MyParticle.sks */; };
+		5A3182C21C96FD3C004B0FA0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3182C01C96FD3C004B0FA0 /* spark.png */; };
+		5A4D2F841C8F0A8200F4BBA7 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4D2F821C8F0A8200F4BBA7 /* bokeh.png */; };
+		5ABF9F921C95B8DD009C0F61 /* ball.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF9F911C95B8DD009C0F61 /* ball.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		4B979AE91C6A2A4C00607AC9 /* mySpriteKitTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mySpriteKitTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B979AED1C6A2A4C00607AC9 /* mySpriteKitTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mySpriteKitTestUITests.swift; sourceTree = "<group>"; };
 		4B979AEF1C6A2A4C00607AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A3182BF1C96FD3B004B0FA0 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		5A3182C01C96FD3C004B0FA0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		5A4D2F821C8F0A8200F4BBA7 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
+		5ABF9F911C95B8DD009C0F61 /* ball.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ball.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +111,12 @@
 			children = (
 				4B979AC91C6A2A4B00607AC9 /* AppDelegate.swift */,
 				4B979ACB1C6A2A4B00607AC9 /* GameScene.sks */,
+				5A4D2F821C8F0A8200F4BBA7 /* bokeh.png */,
+				5A3182BF1C96FD3B004B0FA0 /* MyParticle.sks */,
+				5A3182C01C96FD3C004B0FA0 /* spark.png */,
 				4B979ACD1C6A2A4B00607AC9 /* GameScene.swift */,
 				4B979ACF1C6A2A4B00607AC9 /* GameViewController.swift */,
+				5ABF9F911C95B8DD009C0F61 /* ball.jpg */,
 				4B979AD11C6A2A4B00607AC9 /* Main.storyboard */,
 				4B979AD41C6A2A4B00607AC9 /* Assets.xcassets */,
 				4B979AD61C6A2A4B00607AC9 /* LaunchScreen.storyboard */,
@@ -239,7 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B979ACC1C6A2A4B00607AC9 /* GameScene.sks in Resources */,
+				5ABF9F921C95B8DD009C0F61 /* ball.jpg in Resources */,
 				4B979AD81C6A2A4B00607AC9 /* LaunchScreen.storyboard in Resources */,
+				5A4D2F841C8F0A8200F4BBA7 /* bokeh.png in Resources */,
+				5A3182C11C96FD3C004B0FA0 /* MyParticle.sks in Resources */,
+				5A3182C21C96FD3C004B0FA0 /* spark.png in Resources */,
 				4B979AD51C6A2A4B00607AC9 /* Assets.xcassets in Resources */,
 				4B979AD31C6A2A4B00607AC9 /* Main.storyboard in Resources */,
 			);
@@ -408,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = mySpriteKitTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tsubasa.self.mySpriteKitTest;
@@ -419,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = mySpriteKitTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tsubasa.self.mySpriteKitTest;
@@ -495,6 +513,7 @@
 				4B979AF41C6A2A4C00607AC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B979AF51C6A2A4C00607AC9 /* Build configuration list for PBXNativeTarget "mySpriteKitTestTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +522,7 @@
 				4B979AF71C6A2A4C00607AC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B979AF81C6A2A4C00607AC9 /* Build configuration list for PBXNativeTarget "mySpriteKitTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +531,7 @@
 				4B979AFA1C6A2A4C00607AC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

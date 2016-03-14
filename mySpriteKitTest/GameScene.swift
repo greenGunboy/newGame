@@ -8,38 +8,61 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+extension SKScene{
+    
+//    func GetMidPoint()->CGPoint{
+//        return CGPointMake(self.frame.midX, self.frame.midY)
+//    }
+    
+}
+
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var panPointReference: CGPoint?
+//    var aSelector = Selector("panGesture:")
+//    var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: aSelector)
+    var light = SKLightNode()
+    var myspark = SKEmitterNode(fileNamed: "MyParticle.sks")
+//    var sun = SKSpriteNode(imageNamed: "ball.jpg")
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
-        
-        self.addChild(myLabel)
+        light.position = CGPoint(x: 200, y: 300)
+        myspark?.position = CGPoint(x: 0, y: 0)
+        myspark?.particlePosition = light.position
+//        sun.size = CGSizeMake(100, 100)
+//        sun.position = light.position
+        self.addChild(light)
+        self.addChild(myspark!)
+//        self.addChild(sun)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
         
-        for touch in touches {
+//        for touch in touches {
+//            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+//            let location: CGPoint = appDelegate.touchPoint!
+            
+//            let location = touch.locationInNode(self)
+//        
+//            light.position = location
+//            sun.position = location
+            
+//        }
+//    }
+    
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for touch:AnyObject in touches {
+            
             let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
+            light.position = location
+            myspark?.position = location
+//            sun.position = location
         }
     }
    
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+        
     }
 }

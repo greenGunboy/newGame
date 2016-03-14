@@ -9,8 +9,10 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
-
+class GameViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    var panPointReference: CGPoint?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,4 +52,25 @@ class GameViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+    @IBAction func didPan(sender: UIPanGestureRecognizer) {
+        
+//        let currentPoint = sender.translationInView(self.view)
+//        if let origialPoint = panPointReference {
+//            print("currentPoint: \(currentPoint)")
+//            var appDelegate:AppDelegate = UIApplication().delegate as! AppDelegate
+//            appDelegate.touchPoint = panPointReference!
+//        } else if sender.state == .Began {
+//            print("Began")
+//            panPointReference = currentPoint
+//        }
+//        if sender.state == .Ended {
+//            print("Ended")
+//            panPointReference = nil
+//        }
+        
+    }
+    
+    
+    
 }
