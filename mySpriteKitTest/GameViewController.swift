@@ -53,8 +53,18 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
         return true
     }
     
-    @IBAction func didPan(sender: UIPanGestureRecognizer) {
-        
+//    @IBAction func myGesture(sender: UILongPressGestureRecognizer) {
+//        if sender.state == UIGestureRecognizerState.Began {
+//            print("長押し開始")
+//            
+//        }
+//        if sender.state == UIGestureRecognizerState.Ended {
+//            print("長押し終了")
+//        }
+//    }
+    
+//    @IBAction func didPan(sender: UIPanGestureRecognizer) {
+    
 //        let currentPoint = sender.translationInView(self.view)
 //        if let origialPoint = panPointReference {
 //            print("currentPoint: \(currentPoint)")
@@ -69,7 +79,7 @@ class GameViewController: UIViewController, UIGestureRecognizerDelegate {
 //            panPointReference = nil
 //        }
         
-    }
+//    }
     
     
     

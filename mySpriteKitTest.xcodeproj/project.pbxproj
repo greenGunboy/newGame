@@ -20,6 +20,7 @@
 		5A3182C21C96FD3C004B0FA0 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3182C01C96FD3C004B0FA0 /* spark.png */; };
 		5A4D2F841C8F0A8200F4BBA7 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4D2F821C8F0A8200F4BBA7 /* bokeh.png */; };
 		5ABF9F921C95B8DD009C0F61 /* ball.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ABF9F911C95B8DD009C0F61 /* ball.jpg */; };
+		5AE9CC601C985008007B7B02 /* walk.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5AE9CC5F1C985008007B7B02 /* walk.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		5A3182C01C96FD3C004B0FA0 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		5A4D2F821C8F0A8200F4BBA7 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
 		5ABF9F911C95B8DD009C0F61 /* ball.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ball.jpg; sourceTree = "<group>"; };
+		5AE9CC5F1C985008007B7B02 /* walk.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = walk.atlas; path = ../walk.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		4B979AC81C6A2A4B00607AC9 /* mySpriteKitTest */ = {
 			isa = PBXGroup;
 			children = (
+				5AE9CC5F1C985008007B7B02 /* walk.atlas */,
 				4B979AC91C6A2A4B00607AC9 /* AppDelegate.swift */,
 				4B979ACB1C6A2A4B00607AC9 /* GameScene.sks */,
 				5A4D2F821C8F0A8200F4BBA7 /* bokeh.png */,
@@ -255,6 +258,7 @@
 				4B979AD81C6A2A4B00607AC9 /* LaunchScreen.storyboard in Resources */,
 				5A4D2F841C8F0A8200F4BBA7 /* bokeh.png in Resources */,
 				5A3182C11C96FD3C004B0FA0 /* MyParticle.sks in Resources */,
+				5AE9CC601C985008007B7B02 /* walk.atlas in Resources */,
 				5A3182C21C96FD3C004B0FA0 /* spark.png in Resources */,
 				4B979AD51C6A2A4B00607AC9 /* Assets.xcassets in Resources */,
 				4B979AD31C6A2A4B00607AC9 /* Main.storyboard in Resources */,

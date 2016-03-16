@@ -8,61 +8,135 @@
 
 import SpriteKit
 
-extension SKScene{
+class GameScene: SKScene {
     
-//    func GetMidPoint()->CGPoint{
-//        return CGPointMake(self.frame.midX, self.frame.midY)
-//    }
-    
-}
-
-class GameScene: SKScene, SKPhysicsContactDelegate {
-    
-    var panPointReference: CGPoint?
-//    var aSelector = Selector("panGesture:")
-//    var panGestureRecognizer = UIPanGestureRecognizer(target: self, action: aSelector)
-    var light = SKLightNode()
+    var mylight = SKLightNode()
     var myspark = SKEmitterNode(fileNamed: "MyParticle.sks")
-//    var sun = SKSpriteNode(imageNamed: "ball.jpg")
+    let atlas = SKTextureAtlas(named: "walk")
+    var left = SKSpriteNode(imageNamed: "ball.jpg")
+    var right = SKSpriteNode(imageNamed: "ball.jpg")
+    var person = SKSpriteNode()
+//    var middle = UILongPressGestureRecognizer.self
+    var migi: Bool = false
+    var hidari: Bool = false
     
     override func didMoveToView(view: SKView) {
-        light.position = CGPoint(x: 200, y: 300)
-        myspark?.position = CGPoint(x: 0, y: 0)
-        myspark?.particlePosition = light.position
-//        sun.size = CGSizeMake(100, 100)
-//        sun.position = light.position
-        self.addChild(light)
+        
+        self.backgroundColor = SKColor.cyanColor()
+        
+//        SKView.animateWithDuration(60, animations: {() -> Void in self.backgroundColor = SKColor.orangeColor()})
+        
+        let day = SKAction.moveTo(CGPoint(x: -10, y: 600), duration: 60)
+        mylight.position = CGPoint(x: 1200, y: 600)
+        mylight.runAction(day)
+        myspark?.position = mylight.position
+        myspark?.runAction(day)
+        
+        let d1 = atlas.textureNamed("walk")
+//        let d2 = atlas.textureNamed("walk2")
+//        let d3 = atlas.textureNamed("walk3")
+//        let action2 = SKAction.animateWithTextures([d1, d2, d1, d3], timePerFrame: 0.25)
+        
+        person = SKSpriteNode(texture: d1)
+        person.size = CGSizeMake(130, 180)
+        person.position = CGPoint(x: 660, y: 90)
+        person.shadowCastBitMask = 1
+//        person.lightingBitMask = 1
+        
+//        var action = SKAction.moveTo(CGPoint(x: 0, y: 90), duration: 30)
+//        person.runAction(action)
+//        person.runAction(SKAction.repeatActionForever(action2))
+        self.addChild(person)
+        self.addChild(mylight)
+        
+//        myspark!.position = CGPoint(x: -40, y: -40)
         self.addChild(myspark!)
-//        self.addChild(sun)
+        
+        left.size = CGSizeMake(100, 100)
+        right.size = CGSizeMake(100, 100)
+        left.position = CGPoint(x: 100, y: 90)
+        right.position = CGPoint(x: 1250, y: 90)
+        self.addChild(left)
+        self.addChild(right)
+        
+//        var a = UILongPressGestureRecognizer(target: self, action: left)
+        
     }
     
-//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
-        
-//        for touch in touches {
-//            var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-//            let location: CGPoint = appDelegate.touchPoint!
-            
-//            let location = touch.locationInNode(self)
-//        
-//            light.position = location
-//            sun.position = location
-            
+//    func longPressGesture(sender: UILongPressGestureRecognizer){
+//        if sender.state == UIGestureRecognizerState.Began {
+//            print("start")
+//        }
+//        if sender.state == UIGestureRecognizerState.Ended {
+//            print("end")
 //        }
 //    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for touch: AnyObject in touches {
+            
+//            let d1 = atlas.textureNamed("walk")
+//            let d2 = atlas.textureNamed("walk2")
+//            let d3 = atlas.textureNamed("walk3")
+//            let action2 = SKAction.animateWithTextures([d1, d2, d1, d3], timePerFrame: 0.25)
+            
+            let location = touch.locationInNode(self)
+            let touchNode = self.nodeAtPoint(location)
+            
+            if touchNode == left {
+                UIView.animateWithDuration(50, animations:  {() -> Void in self.backgroundColor = UIColor.greenColor()}, completion: {finished in print("色が変わりました")})
+//                SKView.animateWithDuration(50, animations: {() -> Void in self.backgroundColor = SKColor.orangeColor()}, completion: nil)
+//                SKView.animateWithDuration(60, animations: {() -> Void in self.backgroundColor = SKColor.orangeColor()})
+                print("ON")
+//                hidari = true
+//                let left = SKAction.moveTo(CGPoint(x: person.position.x - 20, y: 90), duration: 1)
+//                person.runAction(SKAction.repeatActionForever(left))
+//                person.runAction(action2)
+            }
+//            if touchNode != left {
+//                print("off")
+//            }
+            if touchNode == right {
+                migi = true
+//                let right = SKAction.moveTo(CGPoint(x: person.position.x + 20, y: 90), duration: 1)
+//                person.runAction(SKAction.repeatActionForever(right))
+//                person.runAction(action2)
+            }
+            
+        }
+    }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch:AnyObject in touches {
             
-            let location = touch.locationInNode(self)
-            light.position = location
-            myspark?.position = location
-//            sun.position = location
+//            let location = touch.locationInNode(self)
+            
+//            mylight.position = location
+//            myspark?.position = location
+
         }
     }
-   
-    override func update(currentTime: CFTimeInterval) {
+    
+    override func update(currentTime: NSTimeInterval) {
+        
+        let d1 = atlas.textureNamed("walk")
+        let d2 = atlas.textureNamed("walk2")
+        let d3 = atlas.textureNamed("walk3")
+        let action2 = SKAction.animateWithTextures([d1, d2, d1, d3], timePerFrame: 0.25)
+        
+        if hidari {
+            print("on")
+            let left = SKAction.moveTo(CGPoint(x: person.position.x - 20, y: 90), duration: 1)
+            person.runAction(SKAction.repeatActionForever(left))
+            person.runAction(action2)
+        }
+        
+        if migi {
+            let right = SKAction.moveTo(CGPoint(x: person.position.x + 20, y: 90), duration: 1)
+            person.runAction(SKAction.repeatActionForever(right))
+            person.runAction(action2)
+        }
         
     }
+
 }
